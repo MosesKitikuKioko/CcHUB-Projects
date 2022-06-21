@@ -1,5 +1,5 @@
 ---
-title: "Technology Space Trends in Africa: "
+title: "Tech Space Trends in Africa: "
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -104,7 +104,7 @@ africa = sf::st_read("Data/afr_g2014_2013_0/afr_g2014_2013_0.shp", quiet = TRUE,
 
 Insights generated in this dashboard are powered by data from <u>[StackOverflow Surveys](https://insights.stackoverflow.com/survey)</u> from year 2011 to 2021. To access cleaned data follow the <u>[link](https://docs.google.com/spreadsheets/d/14E5tPiTTNsVx5IPJVySWakgY-t3lI4yXVfr5sKPn8LY/edit#gid=0)</u>
 
-#### Date Filter:
+
 
 ```{r eval=FALSE, include=FALSE}
 #get the unique countries involved 
@@ -470,13 +470,13 @@ employment_plot
 
 #### Salary Trends 
 
-+ There is a general downwards trend of average salary over the years mainly attributed to the increased supply of skilled labour
++ There is a downwards trend for average salary over the years, this is mainly attributed to the increased supply of tech labour
 
 + There is a notable difference between the salaries earned by both men and women in the industry 
 
 + There is a strong relationship between the number of languages an individual is proficient in and salary they earned 
 
-+ There is a salary increase trend between the salary earned and experience between 1 to 5 years gap and 26 to 30 years of experience 
++ An upward trend in the salary earned is recorded between 1 to 5 years and 26 to 30 years of working experience 
 
 
 ## Column {data-width="500"}
@@ -678,7 +678,7 @@ experience_graph
 
 ### **General Tech Trends in  Africa**
 
-The map indicate the average technology adoption for Africa in 5 years based on stack overflow data. A quantile classification is performed on the number of survey participants with South Africa leading in total numbers followed by Nigeria and Egypt in the top tier whereas Comoros, Guinea-Bissau and Sao Tome and Principe are the bottom three countries respectively
+The map indicate tech trends in Africa for 5 years based on stack overflow data. A quantile classification was performed on the number of survey participants with South Africa leading in total numbers, followed by Nigeria and Egypt in the top tier whereas Comoros, Guinea-Bissau and Sao Tome and Principe are the bottom three countries respectively
 
 
 ```{r echo=FALSE, fig.height=8, fig.width=12, message=FALSE, warning=FALSE}
@@ -732,10 +732,12 @@ tm_shape(country_map) +
 
 ```
 
-### **Africa Tech Trends per Year** \n The graph indicates transition in use of technology platforms for either development, big data or IT for 51 African countries between year 2016 and 2021 \n An increase trend for people joining the tech space are observed across majority of the Africa countries from 2016 to 2021 
+### **Africa Tech Trends per Year**  An increase trend for people joining the tech space are observed across majority of the Africa countries from 2016 to 2021 
 
 
 ```{r echo=FALSE, fig.height=8, fig.show='animate', fig.width=12, message=FALSE, warning=FALSE, dev='jpeg', ffmpeg.format='gif'}
+#\n The graph indicates transition in use of technology platforms for 51 African countries between year 2016 and 2021.
+
 #remove interactivity 
 tmap_mode("plot")
 
@@ -790,12 +792,11 @@ africa_plot %>% animation_opts(2000,transition= 600)
 
 
 ```{r echo=FALSE, fig.height=4, fig.width=12, message=FALSE, warning=FALSE}
-
 #subregions 
 subregions = country %>% 
   dplyr::ungroup() %>% 
   dplyr::select(year, region, count, percent) %>% 
-  dplyr::group_by(year, region) %>% 
+  dplyr::group_by(region, year) %>% 
   dplyr::summarise(total = sum(as.numeric(count), na.rm = T)) %>% 
   dplyr::mutate(percent = total/sum(total))
 
