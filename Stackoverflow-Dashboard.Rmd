@@ -678,7 +678,7 @@ experience_graph
 
 ### **General Tech Trends in  Africa**
 
-The map indicate tech trends in Africa for 5 years based on stack overflow data. A quantile classification was performed on the number of survey participants with South Africa leading in total numbers, followed by Nigeria and Egypt in the top tier whereas Comoros, Guinea-Bissau and Sao Tome and Principe are the bottom three countries respectively
+Based on stack overflow data, the map depicts tech trends in Africa over the last five years. The number of survey participants was quantile classified, with South Africa leading in total numbers, followed by Nigeria and Egypt in the top tier, and Comoros, Guinea-Bissau, and Sao Tome and Principe in the bottom three countries, respectively
 
 
 ```{r echo=FALSE, fig.height=8, fig.width=12, message=FALSE, warning=FALSE}
@@ -732,7 +732,7 @@ tm_shape(country_map) +
 
 ```
 
-### **Africa Tech Trends per Year**  An increase trend for people joining the tech space are observed across majority of the Africa countries from 2016 to 2021 
+### **Africa Tech Trends per Year:**  An increase trend for people joining the tech space are observed across majority of the Africa countries from 2016 to 2021 
 
 
 ```{r echo=FALSE, fig.height=8, fig.show='animate', fig.width=12, message=FALSE, warning=FALSE, dev='jpeg', ffmpeg.format='gif'}
@@ -788,7 +788,7 @@ africa_plot %>% animation_opts(2000,transition= 600)
 ```
 
 
-### **Africa Regional Trends** \n North African sub-region has the largest number people in tech space, followed up by Southern Africa, Western Africa, Eastern Africa and finally middle Africa 
+### **Africa Regional Trends:** \n North African sub-region has the largest number people in tech space, followed up by Southern Africa, Western Africa, Eastern Africa and finally middle Africa 
 
 
 ```{r echo=FALSE, fig.height=4, fig.width=12, message=FALSE, warning=FALSE}
